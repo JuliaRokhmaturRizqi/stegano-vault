@@ -1,0 +1,66 @@
+/* src/App.css */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h1 { text-align: center; color: #2c3e50; }
+p { text-align: center; color: #7f8c8d; margin-bottom: 30px; }
+
+/* Tabs Navigation */
+.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.tabs button {
+  padding: 10px 30px;
+  cursor: pointer;
+  border: none;
+  background: #ecf0f1;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.tabs button.active { background: #3498db; color: white; transform: scale(1.05); }
+
+/* Workspace Grid */
+.workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+/* Image Section */
+.image-section { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.preview-img { max-width: 100%; border-radius: 8px; border: 1px solid #ddd; }
+.placeholder {
+  height: 250px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+}
+
+/* Controls Section */
+.controls-section { display: flex; flex-direction: column; gap: 20px; }
+.input-group label { font-weight: bold; display: block; margin-bottom: 8px; }
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+}
+.btn-action {
+  padding: 15px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-action:hover { background: #219150; }
