@@ -1,66 +1,366 @@
-/* src/App.css */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-}
+/* src/App.css - TOP SECRET RETRO EDITION */
 
-h1 { text-align: center; color: #2c3e50; }
-p { text-align: center; color: #7f8c8d; margin-bottom: 30px; }
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+/* --- TAMBAHAN: LANDING PAGE STYLE --- */
 
-/* Tabs Navigation */
-.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
-.tabs button {
-  padding: 10px 30px;
-  cursor: pointer;
-  border: none;
-  background: #ecf0f1;
-  border-radius: 20px;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-.tabs button.active { background: #3498db; color: white; transform: scale(1.05); }
-
-/* Workspace Grid */
-.workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-
-/* Image Section */
-.image-section { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.preview-img { max-width: 100%; border-radius: 8px; border: 1px solid #ddd; }
-.placeholder {
-  height: 250px;
-  background: #f8f9fa;
+/* Layar Penuh untuk Landing Page */
+.landing-screen {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #aaa;
-  border: 2px dashed #ccc;
+  background-color: #333; /* Meja Gelap */
+  background-image: repeating-linear-gradient(
+    45deg,
+    #2b2b2b 0,
+    #2b2b2b 10px,
+    #333 10px,
+    #333 20px
+  );
+}
+
+/* Amplop / Folder Manila */
+.folder-cover {
+  background-color: #e8dcb5; /* Warna Folder Manila */
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  border: 1px solid #cbbf98;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.5); /* Efek Timbul */
+  text-align: center;
+  position: relative;
+  transform: rotate(-2deg); /* Miring sedikit biar natural */
+  font-family: 'Courier Prime', monospace;
+}
+
+/* Efek Kertas Kusut (Opsional) */
+.folder-cover::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("https://www.transparenttextures.com/patterns/paper.png");
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Stempel Merah Besar */
+.stamp-mark {
+  border: 5px solid rgba(192, 57, 43, 0.8);
+  color: rgba(192, 57, 43, 0.8);
+  font-size: 3rem;
+  font-weight: 900;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  transform: rotate(-10deg);
+  mask-image: url("https://www.transparenttextures.com/patterns/grunge-wall.png"); /* Efek stempel luntur */
+  -webkit-mask-image: url("https://www.transparenttextures.com/patterns/grunge-wall.png");
+}
+
+/* Typography Landing Page */
+.folder-cover h2 {
+  color: #2c3e50;
+  text-decoration: underline;
+  margin-bottom: 30px;
+}
+
+.file-info {
+  text-align: left;
+  border: 1px dashed #555;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.3);
+}
+
+.file-info p {
+  text-align: left;
+  margin: 5px 0;
+  color: #000;
+}
+
+.warning-text {
+  font-size: 0.8rem;
+  color: #c0392b;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Tombol Masuk */
+.btn-enter {
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000;
+  transition: all 0.2s;
+}
+
+.btn-enter:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+/* Tombol Kembali (Di dalam aplikasi utama) */
+.btn-back {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+.btn-back:hover { text-decoration: underline; color: #000; }
+
+body {
+  background-color: #f4e4bc; /* Warna Kertas Tua */
+  color: #2c2c2c;
+  font-family: 'Courier Prime', monospace; /* Font Mesin Ketik */
+  margin: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/paper.png"); /* Tekstur Kertas (Opsional) */
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #c0b090;
+  background: #fffdf0;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Stempel Rahasia di Pojok */
+.container::after {
+  content: 'TOP SECRET';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(192, 57, 43, 0.2);
+  font-size: 3rem;
+  font-weight: bold;
+  transform: rotate(-15deg);
+  border: 5px solid rgba(192, 57, 43, 0.2);
+  padding: 10px;
+  pointer-events: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+p { text-align: center; font-style: italic; color: #555; }
+
+/* --- TABS SEPERTI ARSIP --- */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #333;
+  margin-bottom: 30px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  background: #dcd0b0;
+  border: 2px solid #333;
+  border-bottom: none;
+  margin-right: 5px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+}
+
+.tabs button.active {
+  background: #fffdf0; /* Warna sama dengan container */
+  position: relative;
+  top: 2px; /* Menutupi garis border bawah */
+  padding-bottom: 12px;
+}
+
+/* --- LAYOUT --- */
+.workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (min-width: 768px) {
+  .workspace { flex-direction: row; }
+  .section { width: 50%; }
+}
+
+.section {
+  border: 2px dashed #888;
+  padding: 20px;
+  background: rgba(0,0,0,0.02);
+}
+
+.section h3 {
+  background: #333;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-top: 0;
+  font-size: 1rem;
+  transform: rotate(-1deg);
+}
+
+/* --- INPUTS --- */
+.image-preview {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #333;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+.image-preview img {
+  max-width: 100%;
+  max-height: 300px;
+  filter: sepia(0.3) contrast(1.2); /* Efek foto lama */
+}
+
+.placeholder-box {
+  height: 200px;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  color: #555;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  background: #fff;
+  border: 2px solid #333;
+  padding: 15px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+}
+
+/* --- BUTTONS --- */
+.btn-action {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background: #c0392b; /* Merah Stempel */
+  color: white;
+  border: 2px solid #333;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #333; /* Bayangan kasar */
+  transition: 0.1s;
+}
+
+.btn-action:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #333;
+}
+
+.btn-action:disabled {
+  background: #7f8c8d;
+  cursor: not-allowed;
+}
+
+/* --- RESULT --- */
+/* --- PERBAIKAN: UKURAN GAMBAR HASIL --- */
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  /* Beri latar belakang sedikit gelap/kertas beda agar kontras */
+  background: rgba(0, 0, 0, 0.05); 
+  border: 2px dashed #2c3e50;
+  text-align: center;
   border-radius: 8px;
 }
 
-/* Controls Section */
-.controls-section { display: flex; flex-direction: column; gap: 20px; }
-.input-group label { font-weight: bold; display: block; margin-bottom: 8px; }
-.input-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  resize: vertical;
-  font-family: inherit;
+.result-img {
+  /* 1. BATASI UKURAN */
+  max-width: 100%;      /* Lebar mentok 100% dari kotaknya */
+  max-height: 300px;    /* TINGGI DIBATASI (Ini kuncinya!) */
+  width: auto;          
+  height: auto;
+  
+  /* 2. JAGA PROPORSI */
+  object-fit: contain;  /* Agar gambar tidak gepeng/penyet */
+  
+  /* 3. GAYA "FOTO BUKTI" (Sesuai Tema Detektif) */
+  border: 5px solid #fff; /* Bingkai putih ala foto cetak */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Bayangan */
+  margin: 15px auto;    /* Tengah */
+  display: block;       /* Agar margin auto bekerja */
+  transform: rotate(-1deg); /* Miring sedikit biar estetis */
 }
-.btn-action {
-  padding: 15px;
+
+.btn-download {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
   background: #27ae60;
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid #333;
   font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
 }
-.btn-action:hover { background: #219150; }
+
+/* --- TAMBAHAN: GAYA GIF BUKTI --- */
+
+.evidence-photo {
+  width: 150px;       /* Ukuran Kotak Foto */
+  height: 150px;
+  margin: 0 auto 20px auto; /* Tengah & Jarak bawah */
+  position: relative;
+  background: #2c3e50; /* Warna latar foto jika GIF transparan */
+  border: 5px solid #fff; /* Bingkai Foto Putih */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Bayangan */
+  transform: rotate(3deg); /* Miring sedikit biar natural */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.evidence-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Agar gambar pas di kotak */
+  
+  /* PRO TIP: Efek Blend Mode */
+  /* Jika kamu pakai GIF hitam putih, mode ini membuatnya menyatu dgn kertas */
+  /* Hapus baris di bawah jika GIF kamu sudah berwarna */
+  mix-blend-mode: multiply; 
+  filter: sepia(0.5); /* Efek kecoklatan/jadul */
+}
+
+/* Hiasan Klip Kertas (CSS Murni) */
+.paper-clip {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  width: 15px;
+  height: 40px;
+  border: 4px solid #aaa; /* Warna Besi */
+  border-radius: 10px;
+  border-bottom: none;
+  z-index: 10;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
