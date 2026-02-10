@@ -83,7 +83,7 @@ const SteganoVault = () => {
           {/* Ganti src di bawah ini dengan link GIF pilihanmu */}
           <div className="evidence-photo">
             <img 
-              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3Jzbzh4aGZ4Z3Jzbzh4aGZ4Z3Jzbzh4aGZ4ZyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/l41lFw057lAJcYt0Y/giphy.gif" 
+              src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGQxc2tzZm5kdGlqOXg2dm92ZmFjcnZ1b3pzemh3bDVua2Z5ZHlzdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7UamMoBuFyMCpAyx0Y/giphy.gif" 
               alt="Evidence" 
             />
             <div className="paper-clip"></div> {/* Hiasan Klip Kertas */}
