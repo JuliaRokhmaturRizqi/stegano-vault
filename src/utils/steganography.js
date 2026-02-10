@@ -19,7 +19,7 @@ export const textToBinary = (text) => {
 export const encodeMessage = (imageSrc, message) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.crossOrigin = "Anonymous";
+   
     img.src = imageSrc;
 
     img.onload = () => {
@@ -61,7 +61,7 @@ export const encodeMessage = (imageSrc, message) => {
       resolve(canvas.toDataURL('image/png'));
     };
 
-    img.onerror = (e) => reject(e);
+    img.onerror = (e) => reject("Gagal memuat gambar, File mungkin rusak atau format tidak didukung browser.");
   });
 };
 
@@ -69,7 +69,7 @@ export const encodeMessage = (imageSrc, message) => {
 export const decodeMessage = (imageSrc) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.crossOrigin = "Anonymous";
+    
     img.src = imageSrc;
 
     img.onload = () => {
@@ -132,6 +132,6 @@ export const decodeMessage = (imageSrc) => {
       resolve(null); 
     };
 
-    img.onerror = (e) => reject(e);
+    img.onerror = (e) => reject("Gagal memuat gambar, coba gunakan gambar lain.");
   });
 };
