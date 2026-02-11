@@ -69,41 +69,43 @@ const SteganoVault = () => {
     }
   };
 
-  // --- TAMPILAN 1: LANDING PAGE (TERAS RUMAH) ---
-// ... (kode sebelumnya)
 
-  // --- TAMPILAN 1: LANDING PAGE (TERAS RUMAH) ---
+// --- TAMPILAN 1: LANDING PAGE (CLUTTERED DESK EDITION) ---
   if (!accessGranted) {
     return (
-      <div className="landing-screen">
-        <div className="folder-cover">
+      <div className="landing-screen desk-theme">
+        {/* --- ELEMEN HIASAN (KERTAS BERANTAKAN) --- */}
+        {/* Kita buat beberapa div kosong, nanti diisi gambar via CSS */}
+        <div className="paper-scrap scrap-1"></div>
+        <div className="paper-scrap scrap-2"></div>
+        <div className="paper-scrap scrap-3"></div>
+        <div className="photo-evidence photo-1"></div>
+        <div className="coffee-stain"></div>
+        {/* ----------------------------------------- */}
+
+        {/* FOLDER UTAMA (Sama seperti sebelumnya) */}
+        <div className="folder-cover main-folder">
           <div className="stamp-mark">TOP SECRET</div>
           
-          {/* --- BAGIAN BARU: GIF DETEKTIF --- */}
-          {/* Ganti src di bawah ini dengan link GIF pilihanmu */}
-          <div className="evidence-photo">
-            <img 
-              src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGQxc2tzZm5kdGlqOXg2dm92ZmFjcnZ1b3pzemh3bDVua2Z5ZHlzdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7UamMoBuFyMCpAyx0Y/giphy.gif" 
-              alt="Evidence" 
-            />
-            <div className="paper-clip"></div> {/* Hiasan Klip Kertas */}
+          <div className="evidence-frame">
+               <img 
+                 src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3Jzbzh4aGZ4Z3Jzbzh4aGZ4Z3Jzbzh4aGZ4ZyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/l41lFw057lAJcYt0Y/giphy.gif" 
+                 alt="Investigation" 
+               />
           </div>
-          {/* ----------------------------------- */}
 
           <h2>PROJECT: STEGANO-VAULT</h2>
           <div className="file-info">
-            <p><strong>CLEARANCE LEVEL:</strong> 6</p>
-            <p><strong>AGENT:</strong> SHERLOCK</p> {/* Ubah nama agen sesukamu */}
-            <p><strong>STATUS:</strong> CLASSIFIED</p>
+            <p><strong>CASE ID:</strong> #SV-221B</p>
+            <p><strong>STATUS:</strong> UNSOLVED</p>
           </div>
           
           <p className="warning-text">
-            PERINGATAN: Akses tidak sah adalah pelanggaran federal.
-            Hanya personel berwenang yang diizinkan membuka berkas ini.
+            Mata-mata musuh mungkin mengawasi. Buka hanya di lokasi aman.
           </p>
           
           <button className="btn-enter" onClick={handleEnterSystem}>
-            [ BUKA BERKAS ]
+            [ PERIKSA BERKAS ]
           </button>
         </div>
       </div>
